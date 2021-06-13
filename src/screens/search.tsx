@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
+
+// Página de pesquisa, não implementada, apenas a nível de demonstração das navtabs
 const Search = () => {
   return (
     <View style={styles.container}>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
+// Página de home, não implementada, apenas a nível de demonstração das navtabs
 const Home = () => {
   return (
     <View style={styles.container}>

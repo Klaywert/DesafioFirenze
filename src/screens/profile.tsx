@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import {Image, View, TouchableOpacity, Text, TextInput, KeyboardAvoidingView, Button, Modal} from 'react-native';
 import styles from '../styles/styles';
 
-
+// Página de perfil, com funcionalidades requeridas e algumas opcionais implementadas
 export function Profile(){
     
     // Set das entidades editáveis do sistema
@@ -19,10 +19,12 @@ export function Profile(){
     const [added, setAdded] = useState(false);
     const [addedText, setAddedText] = useState('Add Amigo');
     const [friends, setFriends] = useState(0);
+
+    // Entidades úteis para o modal de lista de likes e amigos
     const [likesVisible, setLikesVisible] = useState(false);
     const [friendsVisible, setFriendsVisible] = useState(false);
 
-    // Funções que lidam e fazem o curtir funcionar
+    // Funções que lidam e fazem o botão de curtir funcionar
     const handleLike = () => {
         if (liked === false) {
             setLikes(likes+1);

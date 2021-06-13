@@ -6,6 +6,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 const Tab = createMaterialBottomTabNavigator();
 
+// "main" do app, que starta a aplicação e dá vida as navtabs
 export default function App() {
   return (
     <NavigationContainer>

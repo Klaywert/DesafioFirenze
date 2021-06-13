@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
         color: "#5c5d66"
     },
 
+    // botão de adicionar amigo
     buttonAdd: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -84,6 +85,7 @@ const styles = StyleSheet.create({
         marginStart: 188
       },
 
+    // icone do botao de adicionar amigo
     buttonAddIcon: {
         margin: 12,
         height: 25,
@@ -91,6 +93,7 @@ const styles = StyleSheet.create({
         resizeMode:"cover",
       },
 
+    // texto do botao e adicionar amigo
     buttonAddText: {
         color: '#fff',
         fontSize: 20,
@@ -99,12 +102,14 @@ const styles = StyleSheet.create({
         fontFamily: 'monospace'
       },
 
+    // nome do perfil
     name: {
        alignItems:"flex-start",
        marginTop: -70,
        marginStart: 25,
     },
 
+    // texto do nome
     nameText: {
         fontSize: 38,
         lineHeight: 50,
@@ -112,6 +117,7 @@ const styles = StyleSheet.create({
         fontWeight:'bold'
     },
 
+    // user do usuario
     username: {
         fontSize: 14,
         color: '#5c18e4',
@@ -121,6 +127,7 @@ const styles = StyleSheet.create({
         fontWeight:'bold'
     },
 
+    // endereço
     address: {
         fontSize: 16,
         color: 'black',
@@ -130,12 +137,14 @@ const styles = StyleSheet.create({
         fontStyle:'italic',
     },
 
+    //whatsapp de contato
     number: {
         flexDirection:'row',
         marginStart: 200,
         marginTop: -70,
     },
 
+    // aspas da bio
     aspas: {
         width: 20,
         height: 20,
@@ -145,6 +154,7 @@ const styles = StyleSheet.create({
 
     },
 
+    // view centralizada para paginas de demonstracao das navtabs
     centeredView: {
         flex: 1,
         justifyContent: "center",
