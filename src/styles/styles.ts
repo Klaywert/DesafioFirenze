@@ -68,12 +68,13 @@ const styles = StyleSheet.create({
     regularWriting: {
         fontSize: 16,
         fontFamily:'monospace',
+        color: "#5c5d66"
     },
 
     buttonAdd: {
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#710193',
+        backgroundColor: '#441d92',
         borderWidth: 0.5,
         borderColor: '#fff',
         height: 40,
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
 
     username: {
         fontSize: 14,
-        color: 'blue',
+        color: '#5c18e4',
         fontFamily:'serif',
         marginStart: 25,
         lineHeight: 45,
@@ -143,6 +144,14 @@ const styles = StyleSheet.create({
         marginRight: 25
 
     },
+
+    centeredView: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: 22,
+        flexDirection:'row'
+      },
 
 });
   

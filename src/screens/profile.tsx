@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-import {Image, View, TouchableOpacity, Text, TextInput, KeyboardAvoidingView} from 'react-native';
-import styles from './styles';
+import {Image, View, TouchableOpacity, Text, TextInput, KeyboardAvoidingView, Button, Modal} from 'react-native';
+import styles from '../styles/styles';
+
 
 export function Profile(){
     
@@ -18,6 +19,8 @@ export function Profile(){
     const [added, setAdded] = useState(false);
     const [addedText, setAddedText] = useState('Add Amigo');
     const [friends, setFriends] = useState(0);
+    const [likesVisible, setLikesVisible] = useState(false);
+    const [friendsVisible, setFriendsVisible] = useState(false);
 
     // Funções que lidam e fazem o curtir funcionar
     const handleLike = () => {
@@ -34,9 +37,9 @@ export function Profile(){
 
     const getLike = (liked) => {
         if(liked > 0 ){
-            return require("../../images/activelike.png");
+            return require("../images/activelike.png");
           }
-          return require("../../images/like.png");
+          return require("../images/like.png");
      }
 
     // Funcoes que lidam com o add e o fazem funcionar
@@ -52,9 +55,9 @@ export function Profile(){
 
     const sendInvite = (added) => {
         if(added > 0) {
-            return require("../../images/added.png")
+            return require("../images/added.png")
         }
-        return require("../../images/add.png")
+        return require("../images/add.png")
     }
 
     
@@ -68,12 +71,12 @@ export function Profile(){
         <View style={styles.container}>
             <KeyboardAvoidingView behavior="position" enabled>
                 <TouchableOpacity activeOpacity= {.5} onPress={ changeImage }>
-                    <Image  style={styles.cover} source={require('../../images/capa.png')}/>
+                    <Image  style={styles.cover} source={require('../images/capa.png')}/>
                 </TouchableOpacity>   
 
                 <View style={styles.header}> 
                     <TouchableOpacity activeOpacity= {.5} onPress={ changeImage }>
-                        <Image style={styles.profile} source={require('../../images/man.png')}/>
+                        <Image style={styles.profile} source={require('../images/man.png')}/>
                     </TouchableOpacity>
 
                     <TouchableOpacity activeOpacity= {.5} onPress={ handleLike }>
@@ -81,15 +84,34 @@ export function Profile(){
                     </TouchableOpacity>
                 </View>
 
-                <View style={styles.likes} >
-                    <Text style={{fontSize: 18, fontFamily:'monospace', fontWeight: 'bold'}}>{likes}</Text>
-                    <Text style={styles.regularWriting}>Likes</Text>
+                <View style={styles.centeredView}>
+                    <View>
+                        <Modal visible={likesVisible}>
+                            <Text>Likes:</Text>
+                            <Button title='Fechar' onPress={() => setLikesVisible(!likesVisible)}></Button>
+                        </Modal>
+                    </View>
+                    <View>
+                        <Modal visible={friendsVisible}>
+                            <Text>Amigos:</Text>
+                            <Button title='Fechar' onPress={() => setFriendsVisible(!friendsVisible)}></Button>
+                        </Modal>
+                    </View>
                 </View>
 
-                <View style={styles.friends}>
-                    <Text style={{fontSize: 18, fontFamily:'monospace', fontWeight: 'bold'}}>{friends}</Text>
-                    <Text style={styles.regularWriting}>Amigos</Text>
-                </View>
+                <TouchableOpacity onPress={() => {setLikesVisible(true)}}>
+                    <View style={styles.likes} >
+                        <Text style={{fontSize: 18, fontFamily:'monospace', fontWeight: 'bold'}}>{likes}</Text>
+                        <Text style={styles.regularWriting}>Likes</Text>
+                    </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => {setLikesVisible(true)}}>
+                    <View style={styles.friends}>
+                        <Text style={{fontSize: 18, fontFamily:'monospace', fontWeight: 'bold'}}>{friends}</Text>
+                        <Text style={styles.regularWriting}>Amigos</Text>
+                    </View>
+                </TouchableOpacity>
 
                 <TouchableOpacity style={styles.buttonAdd} activeOpacity={0.5} onPress={ handleAdd }>
                     <Image source={sendInvite(added)} style={styles.buttonAddIcon}/>
@@ -106,13 +128,13 @@ export function Profile(){
                     <Text style={styles.address}>{address}</Text>
 
                 <View style={styles.number}>
-                    <Image style={{width: 25, height:25}} source={require('../../images/whatsapp.png') }></Image>
+                    <Image style={{width: 25, height:25}} source={require('../images/whatsapp.png') }></Image>
                     <Text style={{fontSize:17, fontStyle:'italic', fontWeight:'bold'}}>{whatsapp}</Text>
                 </View>
 
                     <View style={{flexDirection:'row', justifyContent:"space-between",}}> 
-                    <Image style={styles.aspas} source={require('../../images/abreaspas.png') }></Image> 
-                    <Image style={styles.aspas} source={require('../../images/fechaaspas.png') }></Image>
+                    <Image style={styles.aspas} source={require('../images/abreaspas.png') }></Image> 
+                    <Image style={styles.aspas} source={require('../images/fechaaspas.png') }></Image>
                 </View>
 
                     <TextInput style={{fontSize:20, fontFamily:'serif', fontStyle:'italic', marginTop: -20, marginLeft: 70, marginRight:70}} textAlign={'center'} multiline={true} returnKeyType={'send'} value={bio} blurOnSubmit={true} placeholder="Adicionar uma bio" onChangeText={bio => setBio(bio)}></TextInput>
