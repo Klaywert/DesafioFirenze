@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import styled from "styled-components";
 
 // Estilização dos componentes da página de perfil
 const styles = StyleSheet.create({
@@ -7,12 +6,14 @@ const styles = StyleSheet.create({
          flex: 1,
      },
 
+     // foto de capa
      cover: {
          resizeMode: "cover",
          width: 500,
          height: 250
      },
 
+    // container com foto de perfil e like
      header: {
         flexDirection:'row',
         flexWrap: 'wrap'
@@ -20,6 +21,7 @@ const styles = StyleSheet.create({
 
      },
 
+    // foto de perfil
      profile: {
          marginTop: -60,
          marginStart: 20,
@@ -31,6 +33,7 @@ const styles = StyleSheet.create({
          overflow: "hidden",
      },
 
+     // botao de like
      like: {
         marginTop: -45,
         marginStart: 120,
@@ -44,25 +47,102 @@ const styles = StyleSheet.create({
 
      },
 
+     // contador de likes
      likes: {
         fontWeight:"bold",
-        fontSize: 10,
+        fontSize: 12,
         alignItems: "center",
-        marginTop: -35,
-        marginStart:100,
+        marginTop: -42,
+        marginStart:65,
      },
 
+     // contador de amigos
      friends: {
         alignItems: "center",
-        marginTop: -40,
-        marginStart: 270,
+        marginTop: -42,
+        marginStart: 260,
 
     },
 
+    // escrita comum da página
     regularWriting: {
         fontSize: 16,
-        fontWeight: 'bold',
-    }
+        fontFamily:'monospace',
+    },
+
+    buttonAdd: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#710193',
+        borderWidth: 0.5,
+        borderColor: '#fff',
+        height: 40,
+        width: 180,
+        borderRadius: 5,
+        margin: 10,
+        marginStart: 188
+      },
+
+    buttonAddIcon: {
+        margin: 12,
+        height: 25,
+        width: 25,
+        resizeMode:"cover",
+      },
+
+    buttonAddText: {
+        color: '#fff',
+        fontSize: 20,
+        marginBottom: 4,
+        marginLeft: 8,
+        fontFamily: 'monospace'
+      },
+
+    name: {
+       alignItems:"flex-start",
+       marginTop: -70,
+       marginStart: 25,
+    },
+
+    nameText: {
+        fontSize: 38,
+        lineHeight: 50,
+        fontFamily:'serif',
+        fontWeight:'bold'
+    },
+
+    username: {
+        fontSize: 14,
+        color: 'blue',
+        fontFamily:'serif',
+        marginStart: 25,
+        lineHeight: 45,
+        fontWeight:'bold'
+    },
+
+    address: {
+        fontSize: 16,
+        color: 'black',
+        fontFamily:'serif',
+        marginStart: 25,
+        lineHeight: 20,
+        fontStyle:'italic',
+    },
+
+    number: {
+        flexDirection:'row',
+        marginStart: 200,
+        marginTop: -70,
+    },
+
+    aspas: {
+        width: 20,
+        height: 20,
+        marginTop: 100,
+        marginLeft: 25,
+        marginRight: 25
+
+    },
 
 });
   
